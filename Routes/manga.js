@@ -7,7 +7,7 @@ const router = express.Router();
 const _ = require('lodash');
 
 router.get('/', auth, async (request, response) => {
-    //throw new Error('testing');
+    //throw new Error('testing'); //to check the logging error create a throw exception here to test if winston logger is actually works
     const manga = await Manga.find().sort('name');
     response.send(manga);
 });

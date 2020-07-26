@@ -1,6 +1,6 @@
 require('express-async-errors');
-const winston = require('winston');
-const error = require('./Middleware/error'); //calling the middleware function
+const winston = require('winston');//First you need to install and import winston
+const error = require('./Middleware/error');
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
@@ -12,7 +12,7 @@ const userProfile = require('./Routes/userProfile');
 const registerUser = require('./Routes/registerUser');
 require('dotenv').config();
 
-winston.add(new winston.transports.File({ filename: 'logfile.log' }));
+winston.add(new winston.transports.File({ filename: 'logfile.log' }));//then add winston transport and the filename for log file
 
 let key = process.env.jwtPrivateKey;
 if(!key){
